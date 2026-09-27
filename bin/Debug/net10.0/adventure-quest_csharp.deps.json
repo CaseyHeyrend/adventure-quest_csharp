@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "adventure-quest_csharp/1.0.0": {
+        "runtime": {
+          "adventure-quest_csharp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "adventure-quest_csharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

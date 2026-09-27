@@ -1,0 +1,14 @@
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/bin/Debug/net10.0/adventure-quest_csharp
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/bin/Debug/net10.0/adventure-quest_csharp.deps.json
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/bin/Debug/net10.0/adventure-quest_csharp.runtimeconfig.json
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/bin/Debug/net10.0/adventure-quest_csharp.dll
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/bin/Debug/net10.0/adventure-quest_csharp.pdb
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/adventure-quest_csharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/adventure-quest_csharp.AssemblyInfoInputs.cache
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/adventure-quest_csharp.AssemblyInfo.cs
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/adventure-quest_csharp.csproj.CoreCompileInputs.cache
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/adventure-quest_csharp.dll
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/refint/adventure-quest_csharp.dll
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/adventure-quest_csharp.pdb
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/adventure-quest_csharp.genruntimeconfig.cache
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/ref/adventure-quest_csharp.dll
