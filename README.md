@@ -8,13 +8,15 @@ I am creating a mini RPG in C#. Something that has choices, an ending and you ca
 
 {Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video]()
 
 # Development Environment
 
 {Describe the tools that you used to develop the software}
+VS Code
 
 {Describe the programming language that you used and any libraries.}
+C#
 
 # Useful Websites
 
