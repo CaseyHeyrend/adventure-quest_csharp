@@ -16,7 +16,7 @@ namespace MiniRPG
             Console.WriteLine();
 
             Console.Write("Enter your character name: ");
-            string name = Console.ReadLine();
+            string name = Console.ReadLine() ?? string.Empty;
 
             Player player = new Player(name);
 
@@ -43,7 +43,7 @@ namespace MiniRPG
                 Console.WriteLine("4. Quit");
 
                 Console.Write("Choose an option: ");
-                string choice = Console.ReadLine();
+                string? choice = Console.ReadLine();
 
                 switch (choice)
                 {
@@ -189,7 +189,7 @@ namespace MiniRPG
             Console.WriteLine("4. Back");
 
             Console.Write("Choose a potion: ");
-            string choice = Console.ReadLine();
+            string choice = Console.ReadLine() ?? string.Empty;
 
             switch (choice)
             {
@@ -231,7 +231,7 @@ namespace MiniRPG
                 Console.WriteLine("4. Run");
 
                 Console.Write("Choose an action: ");
-                string choice = Console.ReadLine();
+                string? choice = Console.ReadLine();
 
                 switch (choice)
                 {

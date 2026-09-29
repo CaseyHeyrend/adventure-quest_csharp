@@ -7,17 +7,17 @@ namespace MiniRPG
     {
         public static string[] Areas =
         {
-            "Dark Forest",
-            "Abandoned Village",
-            "Haunted Cave",
-            "Ancient Ruins"
+            "Forest",
+            "Village",
+            "Cave",
+            "Ruins"
         };
 
         public static string[] SecretAreas =
         {
-            "Hidden Graveyard",
-            "Forgotten Tower",
-            "Secret Dungeon"
+            "Hidden Treasure Room",
+            "Hidden Tower",
+            "Secret Room"
         };
 
         public static void ShowLocations()
