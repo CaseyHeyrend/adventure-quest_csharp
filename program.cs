@@ -8,20 +8,45 @@ namespace MiniRPG
 
         static void Main(string[] args)
         {
-            Console.Title = "Mini RPG Adventure";
+            Console.Title = "Adventure Quest";
 
             Console.WriteLine("==============================");
-            Console.WriteLine("       MINI RPG ADVENTURE");
+            Console.WriteLine("        ADVENTURE QUEST");
             Console.WriteLine("==============================");
             Console.WriteLine();
 
+            // Create the player's character
             Console.Write("Enter your character name: ");
             string name = Console.ReadLine() ?? string.Empty;
 
-            Player player = new Player(name);
+            Console.WriteLine();
+            Console.WriteLine("Choose your class:");
+            Console.WriteLine("1. Warrior");
+            Console.WriteLine("2. Knight");
+            Console.WriteLine("3. Mage");
+            Console.WriteLine("4. Archer");
+            Console.WriteLine("5. Rogue");
+
+            Console.Write("Enter your choice: ");
+            string classChoice = Console.ReadLine() ?? string.Empty;
+
+            // Make sure the player chooses a valid class
+            while (classChoice != "1" &&
+                   classChoice != "2" &&
+                   classChoice != "3" &&
+                   classChoice != "4" &&
+                   classChoice != "5")
+            {
+                Console.WriteLine("Please choose a class from 1-5.");
+                Console.Write("Enter your choice: ");
+                classChoice = Console.ReadLine() ?? string.Empty;
+            }
+
+            Player player = new Player(name, classChoice);
 
             Console.WriteLine();
-            Console.WriteLine($"Welcome, {player.Name}!");
+            Console.WriteLine($"Welcome, {player.Name} the {player.ClassName}!");
+            Console.WriteLine($"Your starting weapon is the {player.Weapon}.");
             Console.WriteLine("Your adventure is about to begin.");
             Console.WriteLine();
 
@@ -36,14 +61,14 @@ namespace MiniRPG
             while (playing && player.IsAlive())
             {
                 Console.WriteLine();
-                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("========== MAIN MENU ==========");
                 Console.WriteLine("1. Explore");
                 Console.WriteLine("2. View Stats");
                 Console.WriteLine("3. Use Potion");
                 Console.WriteLine("4. Quit");
 
                 Console.Write("Choose an option: ");
-                string? choice = Console.ReadLine();
+                string choice = Console.ReadLine() ?? string.Empty;
 
                 switch (choice)
                 {
@@ -61,7 +86,7 @@ namespace MiniRPG
 
                     case "4":
                         playing = false;
-                        Console.WriteLine("Thanks for playing!");
+                        Console.WriteLine("Thanks for playing Adventure Quest!");
                         break;
 
                     default:
@@ -133,11 +158,13 @@ namespace MiniRPG
             else if (reward == 2)
             {
                 player.HealthPotions++;
+
                 Console.WriteLine("You found a health potion!");
             }
             else
             {
                 player.PowerupPotions++;
+
                 Console.WriteLine("You found a power-up potion!");
             }
         }
@@ -169,6 +196,9 @@ namespace MiniRPG
             Console.WriteLine();
             Console.WriteLine("========== STATS ==========");
             Console.WriteLine($"Name: {player.Name}");
+            Console.WriteLine($"Class: {player.ClassName}");
+            Console.WriteLine($"Weapon: {player.Weapon}");
+            Console.WriteLine($"Weapon Bonus: +{player.WeaponBonus}");
             Console.WriteLine($"Health: {player.Health}/{player.MaxHealth}");
             Console.WriteLine($"Mana: {player.Mana}/{player.MaxMana}");
             Console.WriteLine($"Attack: {player.AttackPower}");
@@ -231,7 +261,7 @@ namespace MiniRPG
                 Console.WriteLine("4. Run");
 
                 Console.Write("Choose an action: ");
-                string? choice = Console.ReadLine();
+                string choice = Console.ReadLine() ?? string.Empty;
 
                 switch (choice)
                 {
@@ -256,6 +286,7 @@ namespace MiniRPG
                         continue;
                 }
 
+                // Enemy attacks if it is still alive
                 if (enemy.IsAlive())
                 {
                     EnemyAttack(player, enemy);
@@ -275,7 +306,13 @@ namespace MiniRPG
             Console.WriteLine();
             Console.WriteLine($"{player.Name} attacks {enemy.Name}!");
 
-            enemy.TakeDamage(player.AttackPower);
+            int damage = player.AttackPower + player.WeaponBonus;
+
+            Console.WriteLine(
+                $"You deal {damage} damage using your {player.Weapon}!"
+            );
+
+            enemy.TakeDamage(damage);
         }
 
         // Handles an enemy attacking the player

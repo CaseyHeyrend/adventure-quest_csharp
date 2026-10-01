@@ -12,3 +12,4 @@
 /Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/adventure-quest_csharp.pdb
 /Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/adventure-quest_csharp.genruntimeconfig.cache
 /Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/ref/adventure-quest_csharp.dll
+/Users/xxstormynightxx/Documents/GitHub/adventure-quest_csharp/obj/Debug/net10.0/adventure-quest_csharp.sourcelink.json
