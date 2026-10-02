@@ -8,9 +8,10 @@ namespace MiniRPG
         public static string[] Areas =
         {
             "Forest",
-            "Village",
+            "Graveyard",
             "Cave",
-            "Ruins"
+            "Ruins",
+            "Dragon's Lair"
         };
 
         public static string[] SecretAreas =

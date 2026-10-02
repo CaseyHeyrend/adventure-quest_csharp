@@ -104,31 +104,35 @@ namespace MiniRPG
         }
 
         // Restores health using a health potion
-        public void Heal()
+       public void Heal()
+{
+    if (HealthPotions > 0)
+    {
+        int oldHealth = Health;
+
+        Health += 30;
+
+        if (Health > MaxHealth)
         {
-            if (HealthPotions > 0)
-            {
-                int oldHealth = Health;
-
-                Health += 30;
-
-                if (Health > MaxHealth)
-                {
-                    Health = MaxHealth;
-                }
-
-                HealthPotions--;
-
-                Console.WriteLine(
-                    $"{Name} used a health potion and restored " +
-                    $"{Health - oldHealth} health."
-                );
-            }
-            else
-            {
-                Console.WriteLine("You don't have any health potions!");
-            }
+            Health = MaxHealth;
         }
+
+        HealthPotions--;
+
+        Console.WriteLine(
+            $"{Name} used a health potion and restored " +
+            $"{Health - oldHealth} health."
+        );
+
+        Console.WriteLine(
+            $"Health Potions left: {HealthPotions}"
+        );
+    }
+    else
+    {
+        Console.WriteLine("You don't have any health potions!");
+    }
+}
 
         // Restores mana using a mana potion
         public void RestoreMana()

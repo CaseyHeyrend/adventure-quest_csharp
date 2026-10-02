@@ -5,6 +5,7 @@ namespace MiniRPG
     class Program
     {
         static Random random = new Random();
+        static int explorationCount = 0;
 
         static void Main(string[] args)
         {
@@ -104,33 +105,112 @@ namespace MiniRPG
         }
 
         // Allows the player to explore different locations
-        static void Explore(Player player)
+        // Allows the player to explore different locations
+    static void Explore(Player player)
+    {
+        explorationCount++;
+
+        Console.WriteLine();
+
+        // The Dragon's Lair is unlocked after 5 explorations
+        if (explorationCount >= 5)
         {
-            string location = Locations.GetRandomArea(random);
-
-            Console.WriteLine();
-            Console.WriteLine($"You travel to the {location}.");
+            Console.WriteLine("You have discovered a new path...");
+            Console.WriteLine("The path leads toward the Dragon's Lair!");
             Console.WriteLine();
 
-            int eventNumber = random.Next(1, 5);
+            Console.Write("Do you want to enter the Dragon's Lair? (y/n): ");
+            string choice = Console.ReadLine() ?? string.Empty;
 
-            if (eventNumber == 1)
+            if (choice.ToLower() == "y")
             {
-                FindSecretArea(player);
+                FinalArena(player);
+                return;
             }
-            else if (eventNumber == 2)
+
+            Console.WriteLine("You decide to prepare a little longer.");
+            return;
+        }
+
+        string location = Locations.GetRandomArea(random);
+
+        // Prevent the normal random location system from
+        // sending the player to the final boss early.
+        while (location == "Dragon's Lair")
+        {
+            location = Locations.GetRandomArea(random);
+        }
+
+        Console.WriteLine($"You travel to the {location}.");
+        Console.WriteLine();
+
+        int eventNumber = random.Next(1, 5);
+
+        if (eventNumber == 1)
+        {
+            FindSecretArea(player);
+        }
+        else if (eventNumber == 2)
+        {
+            Console.WriteLine("The area is quiet.");
+            Console.WriteLine("You find nothing unusual.");
+        }
+        else
+        {
+            Character enemy = CreateRandomEnemy();
+
+            Console.WriteLine($"A {enemy.Name} appears!");
+            Combat(player, enemy);
+        }
+    }
+        // Final Arena for the player to face the Fire Dragon
+        static void FinalArena(Player player)
+        {
+            Console.WriteLine();
+            Console.WriteLine("You have entered the Dragon's Lair!");
+            Console.WriteLine("Welcome to the Dragon's Lair!");
+            Console.WriteLine();
+            Console.WriteLine("The final battle awaits you!");
+            Console.WriteLine();
+            Console.WriteLine("A mighty Fire Dragon appears!");
+            Console.WriteLine("Prepare for Final Boss!!!!!");
+            Console.WriteLine();
+
+            Character boss = new FireDragon();
+
+            Combat(player, boss);
+            if (player.IsAlive() && !boss.IsAlive())
             {
-                Console.WriteLine("The area is quiet.");
-                Console.WriteLine("You find nothing unusual.");
+                VictoryEnding(player);
             }
             else
             {
-                Character enemy = CreateRandomEnemy();
-
-                Console.WriteLine($"A {enemy.Name} appears!");
-                Combat(player, enemy);
+                DefeatEnding(player);
             }
         }
+        static void VictoryEnding(Player player)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Congratulations! You have defeated the Fire Dragon!");
+                Console.WriteLine("You are the hero of Adventure Quest!");
+                Console.WriteLine("Thank you for playing!");
+                Console.WriteLine("Press any key to exit...");
+                Console.ReadKey();
+
+                Environment.Exit(0);
+            }
+        static void DefeatEnding(Player player)
+            {
+                Console.WriteLine();
+                Console.WriteLine("You have been defeated by the Fire Dragon!");
+                Console.WriteLine("You have relseased the Fire Dragon and doomed the world!");
+                Console.WriteLine();
+                Console.WriteLine("Thank you for playing!");
+                Console.WriteLine("Press any key to exit...");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+
 
         // Gives the player a chance to discover a secret area
         static void FindSecretArea(Player player)
@@ -184,9 +264,12 @@ namespace MiniRPG
 
                 case 3:
                     return new AngrySkeleton();
+                
+                case 4:
+                    return new Goblin();
 
                 default:
-                    return new FireDragon();
+                    return new Zombie();
             }
         }
 

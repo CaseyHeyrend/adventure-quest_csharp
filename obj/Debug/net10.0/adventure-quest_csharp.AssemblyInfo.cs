@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("adventure-quest_csharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da467e6d4b235f243c1772b755d2ffbb641c5d25")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3bccc46a61882ad9ff444ca88aa9398e404719e")]
 [assembly: System.Reflection.AssemblyProductAttribute("adventure-quest_csharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("adventure-quest_csharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

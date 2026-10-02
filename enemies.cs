@@ -27,7 +27,21 @@ namespace MiniRPG
     class FireDragon : Character
     {
         public FireDragon()
-            : base("Fire Dragon", 90, 40, 22, 8)
+            : base("Fire Dragon", 100, 40, 22, 10)
+        {
+        }
+    }
+    class Goblin : Character
+    {
+        public Goblin()
+            : base("Goblin", 30, 5, 10, 2)
+        {
+        }
+    }
+    class Zombie : Character
+    {
+        public Zombie()
+            : base("Zombie", 45, 0, 12, 3)
         {
         }
     }

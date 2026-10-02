@@ -29,6 +29,6 @@ C#
 
 {Make a list of things that you need to fix, improve, and add in the future.}
 
-- Item 1
+- So you can get more potions from the secret areas.
 - Item 2
 - Item 3
