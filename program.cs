@@ -105,7 +105,6 @@ namespace MiniRPG
         }
 
         // Allows the player to explore different locations
-        // Allows the player to explore different locations
     static void Explore(Player player)
     {
         explorationCount++;
@@ -119,7 +118,7 @@ namespace MiniRPG
             Console.WriteLine("The path leads toward the Dragon's Lair!");
             Console.WriteLine();
 
-            Console.Write("Do you want to enter the Dragon's Lair? (y/n): ");
+            Console.Write("Are you ready for the final battle! Are you ready? (y/n): ");
             string choice = Console.ReadLine() ?? string.Empty;
 
             if (choice.ToLower() == "y")
@@ -134,8 +133,7 @@ namespace MiniRPG
 
         string location = Locations.GetRandomArea(random);
 
-        // Prevent the normal random location system from
-        // sending the player to the final boss early.
+        // Prevent the normal random location system from sending the player to the final boss early.
         while (location == "Dragon's Lair")
         {
             location = Locations.GetRandomArea(random);
@@ -153,7 +151,7 @@ namespace MiniRPG
         else if (eventNumber == 2)
         {
             Console.WriteLine("The area is quiet.");
-            Console.WriteLine("You find nothing unusual.");
+            Console.WriteLine("You find nothing. Back to the adventure!");
         }
         else
         {
